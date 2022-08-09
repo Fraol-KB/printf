@@ -9,7 +9,7 @@
 int (*get_print_func(char s))(va_list, char *, unsigned int)
 {
 	print_t pr[] = {
-		{"c", print_chr},
+		{"c", print_char},
 		{"s", print_str},
 		{NULL, NULL},
 	};
