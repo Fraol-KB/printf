@@ -35,5 +35,6 @@ int print_hex(va_list arguments, char *buf, unsigned int ibuf);
 int print_upx(va_list arguments, char *buf, unsigned int ibuf);
 char *fill_oct_array(char *bnr, char *oct);
 char *fill_hex_array(char *bnr, char *hex, int isupp, int limit);
+int print_usr(va_list arguments, char *buf, unsigned int ibuf);
 
 #endif
