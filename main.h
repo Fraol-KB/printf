@@ -25,5 +25,8 @@ int print_str(va_list arguments, char *buf, unsigned int ibuf);
 int (*get_print_func(char s))(va_list, char *, unsigned int);
 unsigned int handle_buf(char *buf, char c, unsigned int ibuf);
 int print_buf(char *buf, unsigned int nbuf);
+int print_int(va_list arguments, char *buf, unsigned int ibuf);
+int print_bnr(va_list arguments, char *buf, unsigned int ibuf);
+char *fill_binary_array(char *binary, long int int_in, int isneg, int limit);
 
 #endif
