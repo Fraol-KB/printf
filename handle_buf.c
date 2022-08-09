@@ -1,20 +1,26 @@
 #include "main.h"
 
 /**
- * handl_buf - concatenates the buffer characters
+ * print_str - writes the string to stdout
+ * @arguments: input string
  * @buf: buffer pointer
- * @c: charcter to concatenate
- * @ibuf: index of buffer pointer
- * Return: index of buffer pointer.
+ * @ibuf: index for buffer pointer
+ * Return: On success 1.
  */
-unsigned int handle_buf(char *buf, char c, unsigned int ibuf)
+int print_str(va_list arguments, char *buf, unsigned int ibuf)
 {
-	if (ibuf == 1024)
+	char *str;
+	unsigned int i;
+	char nill[] = "(null)";
+
+	str = va_arg(arguments, char *);
+	if (str == NULL)
 	{
-		print_buf(buf, ibuf);
-		ibuf = 0;
+		for (i = 0; nill[i]; i++)
+			ibuf = handl_buf(buf, nill[i], ibuf);
+		return (6);
 	}
-	buf[ibuf] = c;
-	ibuf++;
-	return (ibuf);
+	for (i = 0; str[i]; i++)
+		ibuf = handl_buf(buf, str[i], ibuf);
+	return (i);
 }
